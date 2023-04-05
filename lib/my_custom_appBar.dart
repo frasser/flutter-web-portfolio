@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
 class My_custom_appBar extends StatelessWidget {
-  //const My_custom_appBar({ Key? key }) : super(key: key);
+  const My_custom_appBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +39,15 @@ class My_custom_appBar extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {},
-                child: const Text(
-                  "WORKS",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),
-                ),
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12))),
+                child: const Text("WORKS"),
               ),
               TextButton(
                 onPressed: () {},
-                child: const Text(
+                child: Text(
                   'CONTACT ME',
                   style: TextStyle(
                       color: Colors.white,

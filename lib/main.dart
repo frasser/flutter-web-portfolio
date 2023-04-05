@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Helper/HorizontalScroll.dart';
 import 'package:my_portfolio/my_contact.dart';
@@ -132,22 +131,18 @@ class MyApp extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 100),
-                            child: Expanded(
-                              child: Text(
-                                "SKILLS"
-                                "\nAND"
-                                "\nTOOLS",
-                                style: TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                    decorationThickness: 1.85,
-                                    decorationColor: Colors.amber),
-                              ),
+                          Expanded(
+                            child: Text(
+                              "SKILLS"
+                              "\nAND"
+                              "\nTOOLS",
+                              style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  decoration: TextDecoration.underline,
+                                  decorationThickness: 1.85,
+                                  decorationColor: Colors.amber),
                             ),
                           ),
                           Expanded(

@@ -50,6 +50,28 @@ class Games extends StatelessWidget {
         "https://frasser.itch.io/",
         "https://frasser.itch.io/",
         "https://frasser.itch.io/"),
+    Game(
+        "HAKUNA",
+        "images/sentinel.jpeg",
+        "3D",
+        "HORROR",
+        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/"),
+    Game(
+        "HAKUNA MATATA",
+        "images/way.jpeg",
+        "2D",
+        "SURVIVE",
+        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/",
+        "https://frasser.itch.io/"),
   ];
 
   Widget _buildCardItem(BuildContext context, int index) {
@@ -96,7 +118,7 @@ class Games extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(1.0),
                       child: Chip(
                         backgroundColor: Colors.green,
                         label: Text(game.type),
@@ -230,7 +252,7 @@ class Games extends StatelessWidget {
       child: ScrollSnapList(
         itemBuilder: _buildCardItem,
         itemCount: dataGames.length,
-        itemSize: 200,
+        itemSize: 10,
         onItemFocus: (index) {},
         // physics: AlwaysScrollableScrollPhysics(),
         // controller: _controller,

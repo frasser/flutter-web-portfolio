@@ -250,9 +250,10 @@ class Games extends StatelessWidget {
     ScrollController _controller = ScrollController();
     return Expanded(
       child: ScrollSnapList(
+        margin: EdgeInsets.only(top: 50),
         itemBuilder: _buildCardItem,
         itemCount: dataGames.length,
-        itemSize: 10,
+        itemSize: 150,
         onItemFocus: (index) {},
         // physics: AlwaysScrollableScrollPhysics(),
         // controller: _controller,

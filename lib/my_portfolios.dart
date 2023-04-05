@@ -31,7 +31,7 @@ class _My_PortfoliosState extends State<My_Portfolios>
       alignment: Alignment.center,
       width: double.infinity,
       color: Colors.transparent,
-      height: 550,
+      height: 600,
       padding: const EdgeInsets.all(10),
       child: Flex(
         direction: Axis.vertical,

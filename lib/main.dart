@@ -128,29 +128,33 @@ class MyApp extends StatelessWidget {
                       color: Colors.black12.withOpacity(0.2),
                       height: 145,
                       //margin: EdgeInsets.symmetric(horizontal: 60),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              "SKILLS"
-                              "\nAND"
-                              "\nTOOLS",
-                              style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  decoration: TextDecoration.underline,
-                                  decorationThickness: 1.85,
-                                  decorationColor: Colors.amber),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 0, horizontal: 100),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "SKILLS"
+                                "\nAND"
+                                "\nTOOLS",
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    decoration: TextDecoration.underline,
+                                    decorationThickness: 1.85,
+                                    decorationColor: Colors.amber),
+                              ),
                             ),
-                          ),
-                          Expanded(
-                              child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: My_skills(),
-                          )),
-                        ],
+                            Expanded(
+                                child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: My_skills(),
+                            )),
+                          ],
+                        ),
                       ),
                     )
                   ],

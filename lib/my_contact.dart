@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class My_contact extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Container(
         width: MediaQuery.of(context).size.width * 0.7,
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         decoration: BoxDecoration(
             color: Colors.deepPurpleAccent,
             //border: Border.all(width: 2),
@@ -20,11 +21,11 @@ class My_contact extends StatelessWidget {
                   .titleLarge!
                   .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               style: ButtonStyle(
                   padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(horizontal: 25, vertical: 25)),
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 25)),
                   overlayColor:
                       MaterialStateProperty.all(Colors.cyan.withOpacity(0.8)),
                   backgroundColor:
@@ -32,7 +33,7 @@ class My_contact extends StatelessWidget {
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40)))),
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Contact Me",
                 style: TextStyle(
                     color: Colors.white,
@@ -40,7 +41,7 @@ class My_contact extends StatelessWidget {
                     fontSize: 15),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         )
 

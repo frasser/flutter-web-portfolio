@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -8,14 +7,15 @@ class My_custom_appBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30),
-      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
-      height: 80,
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 60),
+      height: 50,
       width: double.infinity,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.black, width: 2),
-          borderRadius: BorderRadius.circular(40)),
+      decoration: const BoxDecoration(
+        color: Colors.transparent,
+        //border: Border.all(color: Colors.black, width: 2),
+        //borderRadius: BorderRadius.circular(40)
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -24,32 +24,38 @@ class My_custom_appBar extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           Row(
             children: [
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'About Me',
+                child: const Text(
+                  'ABOUT',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.yellow,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
                 ),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  "Portfolio",
+                child: const Text(
+                  "WORKS",
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
                 ),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Contact Me',
+                child: const Text(
+                  'CONTACT ME',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16),
                 ),
               ),
 /*

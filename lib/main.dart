@@ -17,6 +17,15 @@ class MyApp extends StatelessWidget {
       const TextStyle(fontSize: 40, fontWeight: FontWeight.bold);
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) =>
+        MediaQuery.of(context).size.width >= 600;
+
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton.large(
         child: const Icon(Icons.mail_outline),
@@ -40,22 +49,22 @@ class MyApp extends StatelessWidget {
           Column(
             children: [
               Container(
-                width: double.infinity,
-                height: 600,
+                width: screenWidth,
+                height: isDesktop(context) ? 600 : screenHeight - 100,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/back.jpeg"),
                         fit: BoxFit.cover)),
                 child: Column(
                   children: [
-                    MediaQuery.of(context).size.width > 720
+                    isDesktop(context)
                         ? My_custom_appBar()
                         : Container(
                             padding: const EdgeInsets.symmetric(horizontal: 30),
                             margin: const EdgeInsets.symmetric(
                                 vertical: 20, horizontal: 60),
                             height: 25,
-                            width: double.infinity,
+                            width: screenWidth,
                             decoration: const BoxDecoration(
                               color: Colors.transparent,
                             ),
@@ -90,7 +99,7 @@ class MyApp extends StatelessWidget {
                           radius: 70,
                         ),
                         SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.5,
+                            width: screenWidth * 0.8,
                             child: Column(
                               children: const [
                                 Text("Hello, There. ",
@@ -168,8 +177,8 @@ class MyApp extends StatelessWidget {
                     color: Colors.white),
               ),*/
               Container(
-                  width: double.infinity,
-                  height: 800,
+                  width: screenWidth,
+                  height: 530,
                   decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage("images/back.jpeg"),
@@ -179,19 +188,66 @@ class MyApp extends StatelessWidget {
                       children: [
                         Container(
                           color: Colors.black.withOpacity(0.0),
-                          height: 600,
+                          height: 400,
                         ),
                         Container(
                           //color: Colors.yellow.withOpacity(0.2),
-                          height: 600,
+                          height: 530,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                                 colors: [
                                   Colors.transparent,
                                   Colors.black.withOpacity(0.4),
                                   Colors.black.withOpacity(0.5),
-                                  Colors.black.withOpacity(0.8),
-                                  Colors.black,
+                                  Colors.black.withOpacity(0.6),
+                                  Colors.black.withOpacity(0.7),
+                                  Colors.black.withOpacity(0.7),
+                                  Colors.black.withOpacity(0.6),
+                                  Colors.black.withOpacity(0.5),
+                                ],
+                                stops: const [
+                                  0.01,
+                                  0.2,
+                                  0.3,
+                                  0.35,
+                                  0.4,
+                                  0.45,
+                                  0.5,
+                                  0.8
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter),
+                          ),
+                        ),
+                        My_Portfolios(),
+                        //BuildCard(),
+                      ],
+                    ),
+                  ])),
+              Container(
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/back.jpeg"),
+                        fit: BoxFit.cover)),
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          color: Colors.black.withOpacity(0.0),
+                          height: 400,
+                        ),
+                        Container(
+                          //color: Colors.yellow.withOpacity(0.2),
+                          height: 400,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors: [
+                                  Colors.black.withOpacity(0.5),
+                                  Colors.black.withOpacity(0.4),
+                                  Colors.black.withOpacity(0.3),
+                                  Colors.transparent,
+                                  Colors.transparent,
                                 ],
                                 stops: const [
                                   0.01,
@@ -204,16 +260,13 @@ class MyApp extends StatelessWidget {
                                 end: Alignment.bottomCenter),
                           ),
                         ),
-                        My_Portfolios(),
-                        //BuildCard(),
+                        My_contact(),
                       ],
                     ),
-                    My_contact(),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     My_footer(),
-                  ])),
+                  ],
+                ),
+              )
             ],
           )
         ],

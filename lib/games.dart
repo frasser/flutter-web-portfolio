@@ -81,7 +81,7 @@ class Games extends StatelessWidget {
         margin: const EdgeInsets.only(top: 10),
         width: 350,
         height: 450,
-        color: Colors.transparent,
+        color: Colors.black12,
         child: Align(
           alignment: const Alignment(0.0, 0.0),
           child: Column(
@@ -248,29 +248,36 @@ class Games extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScrollController _controller = ScrollController();
-    return Expanded(
-      child: ScrollSnapList(
-        margin: EdgeInsets.only(top: 50),
-        itemBuilder: _buildCardItem,
-        itemCount: dataGames.length,
-        itemSize: 150,
-        onItemFocus: (index) {},
-        // physics: AlwaysScrollableScrollPhysics(),
-        // controller: _controller,
-        scrollDirection: Axis.horizontal,
-        /*child: Row(
-            children: [
-              BuildCard(),
-              SizedBox(width: 20),
-              BuildCard(),
-              SizedBox(width: 20),
-              BuildCard(),
-              SizedBox(width: 20),
-              BuildCard(),
-              SizedBox(width: 20),
-            ],
-          )*/
-      ),
+    return Column(
+      children: [
+        Expanded(
+          child: ScrollSnapList(
+            margin: EdgeInsets.only(top: 40),
+            itemBuilder: _buildCardItem,
+            dynamicItemSize: true,
+            itemCount: dataGames.length,
+            itemSize: 350,
+            initialIndex: 2,
+            reverse: true,
+            onItemFocus: (index) {},
+            // physics: AlwaysScrollableScrollPhysics(),
+            // controller: _controller,
+            scrollDirection: Axis.horizontal,
+            /*child: Row(
+                children: [
+                  BuildCard(),
+                  SizedBox(width: 20),
+                  BuildCard(),
+                  SizedBox(width: 20),
+                  BuildCard(),
+                  SizedBox(width: 20),
+                  BuildCard(),
+                  SizedBox(width: 20),
+                ],
+              )*/
+          ),
+        ),
+      ],
     );
   }
 }

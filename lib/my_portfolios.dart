@@ -27,11 +27,12 @@ class _My_PortfoliosState extends State<My_Portfolios>
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
-      width: double.infinity,
+      width: screenWidth,
       color: Colors.transparent,
-      height: 600,
+      height: 530,
       padding: const EdgeInsets.all(10),
       child: Flex(
         direction: Axis.vertical,

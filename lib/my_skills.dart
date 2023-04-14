@@ -62,7 +62,7 @@ class My_skills extends StatelessWidget {
                 width: svgSize,
               ),
               SvgPicture.asset(
-                'images/unity.svg',
+                'images/git.svg',
                 width: svgSize,
                 color: Colors.white,
               ),

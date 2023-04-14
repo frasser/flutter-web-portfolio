@@ -7,11 +7,11 @@ import 'package:url_launcher/link.dart';
 class Games extends StatelessWidget {
   List<Game> dataGames = [
     Game(
-        "HAKUNA",
-        "images/sentinel.jpeg",
+        "ASTRAL PROJECTION",
+        "images/viaje.jpeg",
         "3D",
-        "HORROR",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
+        "ADVENTURE",
+        "An astral experience becomes dangerous when a boy gets caught up in the journey by taking 'Yagé'",
         "https://frasser.itch.io/",
         "https://frasser.itch.io/",
         "https://frasser.itch.io/",
@@ -129,7 +129,7 @@ class Games extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Chip(
-                        backgroundColor: Colors.grey.withBlue(100),
+                        backgroundColor: Colors.green,
                         label: Text(game.type2),
                         labelStyle: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w800),
@@ -177,7 +177,7 @@ class Games extends StatelessWidget {
                               child: GestureDetector(
                                 onTap: followLink,
                                 child: SvgPicture.asset(
-                                  'images/itch2.svg',
+                                  'images/it.svg',
                                   width: svgSize,
                                   //color: Colors.white,
                                 ),

@@ -71,13 +71,13 @@ class My_contact extends StatelessWidget {
                           : const EdgeInsets.symmetric(horizontal: 0),
                       child: Link(
                           target: LinkTarget.blank,
-                          uri: Uri.parse("game.play"),
+                          uri: Uri.parse("https://frasser.itch.io/"),
                           builder: (context, followLink) => MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: followLink,
                                   child: SvgPicture.asset(
-                                    'images/itch2.svg',
+                                    'images/it.svg',
                                     width: 35,
                                     color: Colors.white,
                                   ),
@@ -90,7 +90,8 @@ class My_contact extends StatelessWidget {
                           : const EdgeInsets.symmetric(horizontal: 0),
                       child: Link(
                           target: LinkTarget.blank,
-                          uri: Uri.parse("game.play"),
+                          uri: Uri.parse(
+                              "https://www.linkedin.com/in/juan-pablo-frasser/?locale=en_US"),
                           builder: (context, followLink) => MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
@@ -109,13 +110,32 @@ class My_contact extends StatelessWidget {
                           : const EdgeInsets.symmetric(horizontal: 0),
                       child: Link(
                           target: LinkTarget.blank,
-                          uri: Uri.parse("game.play"),
+                          uri: Uri.parse("https://twitter.com/jpfrazzer"),
                           builder: (context, followLink) => MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/twitter.svg',
+                                    width: 35,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )),
+                    ),
+                    Padding(
+                      padding: isDesktop(context)
+                          ? const EdgeInsets.symmetric(horizontal: 10)
+                          : const EdgeInsets.symmetric(horizontal: 0),
+                      child: Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse("https://github.com/frasser"),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/git.svg',
                                     width: 35,
                                     color: Colors.white,
                                   ),

@@ -32,19 +32,20 @@ class My_custom_appBar extends StatelessWidget {
                 child: const Text(
                   'ABOUT',
                   style: TextStyle(
-                      color: Colors.yellow,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
               ),
               TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12))),
-                child: const Text("WORKS"),
-              ),
+                  onPressed: () {},
+                  child: const Text(
+                    'WORKS',
+                    style: TextStyle(
+                        color: Colors.yellow,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
+                  )),
               TextButton(
                 onPressed: () {},
                 child: Text(

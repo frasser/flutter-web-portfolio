@@ -7,47 +7,55 @@ import 'package:my_portfolio/Helper/app.dart';
 class Apps extends StatelessWidget {
   List<App> dataApps = [
     App(
-        "HAKUNA",
-        "images/gubi_app.png",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
-    App(
-        "HAKUNA matata",
+        "GUBOX STORE",
         "images/gubox_shop.png",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "web shop and landing page for IoT products developed in react with gatsby js",
+        "https://github.com/frasser/gubox-store",
+        "",
+        "",
+        ""),
     App(
-        "UNO",
+        "POWCAST",
+        "images/powcast.png",
+        "Podcast app integrated with  AudioBoom api",
+        "https://github.com/frasser/powcast",
+        "",
+        "",
+        ""),
+    App(
+        "GUBI APP",
         "images/gubi_app.png",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "hibrid web view in android that contain gubi gps web,an app for tracking and manage gps devices based on leaflet open source library and here maps",
+        "https://github.com/frasser/gubi",
+        "",
+        "",
+        ""),
     App(
-        "ABLAO",
-        "images/gubox_shop.png",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "MASTER TEACH",
+        "images/master_teach.png",
+        "Android app to register and find freelancer teachers",
+        "https://github.com/frasser/MasterTeach",
+        "",
+        "",
+        ""),
+    App(
+        "CIRUS BANK",
+        "images/cirus_bank.png",
+        "Android app to simulate bank transactions",
+        "https://github.com/frasser/Banca_Movil",
+        "",
+        "",
+        ""),
   ];
 
   Widget _buildCardItem(BuildContext context, int index) {
     App app = dataApps[index];
     double svgSize = 35;
     return Container(
-        margin: const EdgeInsets.only(top: 10),
-        width: 350,
-        height: 450,
-        color: Colors.transparent,
+        margin: const EdgeInsets.only(top: 12),
+        width: 360,
+        height: 500,
+        color: Colors.black12,
         child: Align(
           alignment: const Alignment(0.0, 0.0),
           child: Column(
@@ -64,7 +72,7 @@ class Apps extends StatelessWidget {
                     //margin: EdgeInsets.only(top: -10),
 
                     child: Align(
-                      alignment: const Alignment(-0.9, -1.5),
+                      alignment: const Alignment(-0.9, -1.4),
                       child: Text(
                         app.title,
                         textAlign: TextAlign.right,
@@ -79,15 +87,15 @@ class Apps extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
                   app.description,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.justify,
                 ),
               ),
               SizedBox(height: 20),
@@ -96,62 +104,66 @@ class Apps extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(app.git),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/git3.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                    if (app.git != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(app.git),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/git3.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(app.link),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/itch2.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                              )),
+                    if (app.link != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(app.link),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/itch2.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(app.apple),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/appleStore.svg',
-                                  width: svgSize,
-                                  color: Colors.white,
+                              )),
+                    if (app.apple != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(app.apple),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/appleStore.svg',
+                                    width: svgSize,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(app.play),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/play.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                              )),
+                    if (app.play != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(app.play),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/play.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ))
+                              ))
 
                     /*  Link(
                       target:
@@ -179,11 +191,11 @@ class Apps extends StatelessWidget {
       children: [
         Expanded(
           child: ScrollSnapList(
-            margin: EdgeInsets.only(top: 40),
+            margin: EdgeInsets.only(top: 30),
             itemBuilder: _buildCardItem,
             dynamicItemSize: true,
             itemCount: dataApps.length,
-            itemSize: 350,
+            itemSize: 360,
             initialIndex: 2,
             reverse: true,
             onItemFocus: (index) {},

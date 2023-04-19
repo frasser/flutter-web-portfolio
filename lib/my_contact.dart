@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class My_contact extends StatelessWidget {
   @override
@@ -46,7 +47,9 @@ class My_contact extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(Colors.amber),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40)))),
-                onPressed: () {},
+                onPressed: () {
+                  _contact();
+                },
                 child: const Text(
                   "Contact Me",
                   style: TextStyle(
@@ -151,5 +154,14 @@ class My_contact extends StatelessWidget {
           //child: Text("¿ Do You Like What I Do ?"),
           ),
     );
+  }
+}
+
+void _contact() async {
+  final Uri _url = Uri.parse('mailto:frazzer_1004@hotmail.com');
+  if (await canLaunchUrl(_url)) {
+    await launchUrl(_url);
+  } else {
+    throw 'Could not send message $_url';
   }
 }

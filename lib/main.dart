@@ -5,6 +5,7 @@ import 'package:my_portfolio/my_custom_appBar.dart';
 import 'package:my_portfolio/my_footer.dart';
 import 'package:my_portfolio/my_portfolios.dart';
 import 'package:my_portfolio/my_skills.dart';
+import 'package:url_launcher/url_launcher.dart';
 //import 'package:flutter_svg/avd.dart';
 
 void main() => runApp(MaterialApp(
@@ -27,12 +28,14 @@ class MyApp extends StatelessWidget {
         MediaQuery.of(context).size.width < 600;
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton.large(
+      floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.mail_outline),
-        elevation: 20.0,
+        elevation: 10.0,
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
-        onPressed: () {},
+        onPressed: () {
+          _contact();
+        },
       ),
       backgroundColor: Colors.transparent,
       body: ListView(
@@ -50,7 +53,7 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 width: screenWidth,
-                height: isDesktop(context) ? 600 : screenHeight - 100,
+                height: isDesktop(context) ? 620 : 820,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/back.jpeg"),
@@ -91,45 +94,98 @@ class MyApp extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const CircleAvatar(
-                          backgroundImage: AssetImage("images/new2.png"),
-                          radius: 70,
-                        ),
-                        SizedBox(
-                            width: screenWidth * 0.8,
-                            child: Column(
-                              children: const [
-                                Text("Hello, There. ",
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white)),
-                                Text("I'm juan frasser 👋",
-                                    style: TextStyle(
-                                        fontSize: 40,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.yellow)),
-                                SizedBox(
-                                  height: 20,
+                    isDesktop(context)
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 20,
+                                  right: 20,
+                                  left: 20,
                                 ),
-                                Text(
-                                  "I'm an Video games programmer and mobile apps developer. I enjoy developing experiences in mobile devices for android native and hybrid apps with flutter. Also, i have acquired eperience as game designer and developer doing personal and educative proyects in unity engine for web plataforms and casual mobile games.  "
-                                  "\nI am passionate about technology with great creative skills and team leadership. Committed to self-taught learning and professional development.",
-                                  overflow: TextOverflow.clip,
-                                  softWrap: true,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
-                                      color: Colors.white),
+                                child: const CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage("images/new2.png"),
+                                  radius: 70,
                                 ),
-                              ],
-                            )),
-                      ],
-                    ),
+                              ),
+                              SizedBox(
+                                  width: screenWidth * 0.5,
+                                  child: Column(
+                                    children: const [
+                                      Text("Hello, There. ",
+                                          style: TextStyle(
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white)),
+                                      Text("I'm juan frasser 👋",
+                                          style: TextStyle(
+                                              fontSize: 40,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.yellow)),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      Text(
+                                        "I'm an Video games programmer and mobile apps developer. I enjoy developing experiences in mobile devices for android native and hybrid apps with flutter. Also, i have acquired eperience as game designer and developer doing personal and educative proyects in unity engine for web plataforms and casual mobile games.  "
+                                        "\nI am passionate about technology with great creative skills and team leadership. Committed to self-taught learning and professional development.",
+                                        overflow: TextOverflow.clip,
+                                        softWrap: true,
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 18,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  )),
+                            ],
+                          )
+                        : Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  width: screenWidth * 0.8,
+                                  child: Column(
+                                    children: const [
+                                      Text("Hello, There. ",
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white)),
+                                      Text("I'm juan frasser👋",
+                                          style: TextStyle(
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.yellow)),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      CircleAvatar(
+                                        backgroundImage:
+                                            AssetImage("images/new2.png"),
+                                        radius: 40,
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      Text(
+                                        "I'm an Video games programmer and mobile apps developer. I enjoy developing experiences in mobile devices for android native and hybrid apps with flutter. Also, i have acquired eperience as game designer and developer doing personal and educative proyects in unity engine for web plataforms and casual mobile games.  "
+                                        "\nI am passionate about technology with great creative skills and team leadership. Committed to self-taught learning and professional development.",
+                                        overflow: TextOverflow.clip,
+                                        softWrap: true,
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 16,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  )),
+                            ],
+                          ),
                     const SizedBox(
                       height: 40,
                     ),
@@ -138,32 +194,60 @@ class MyApp extends StatelessWidget {
                       height: 145,
                       //margin: EdgeInsets.symmetric(horizontal: 60),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 0, horizontal: 100),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Text(
-                                "SKILLS"
-                                "\nAND"
-                                "\nTOOLS",
-                                style: TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    decoration: TextDecoration.underline,
-                                    decorationThickness: 1.85,
-                                    decorationColor: Colors.amber),
+                        padding: isDesktop(context)
+                            ? const EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 100)
+                            : const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                        child: isDesktop(context)
+                            ? Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      "SKILLS"
+                                      "\nAND"
+                                      "\nTOOLS",
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          decoration: TextDecoration.underline,
+                                          decorationThickness: 1.85,
+                                          decorationColor: Colors.amber),
+                                    ),
+                                  ),
+                                  Expanded(
+                                      child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: My_skills(),
+                                  )),
+                                ],
+                              )
+                            : Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "SKILLS AND TOOLS",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        decoration: TextDecoration.underline,
+                                        decorationThickness: 1.85,
+                                        decorationColor: Colors.amber),
+                                  ),
+                                  SizedBox(
+                                    height: 7,
+                                  ),
+                                  Expanded(
+                                      child: Padding(
+                                    padding: const EdgeInsets.all(.0),
+                                    child: My_skills(),
+                                  ))
+                                ],
                               ),
-                            ),
-                            Expanded(
-                                child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: My_skills(),
-                            )),
-                          ],
-                        ),
                       ),
                     )
                   ],
@@ -272,5 +356,14 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+void _contact() async {
+  final Uri _url = Uri.parse('mailto:frazzer_1004@hotmail.com');
+  if (await canLaunchUrl(_url)) {
+    await launchUrl(_url);
+  } else {
+    throw 'Could not send message $_url';
   }
 }

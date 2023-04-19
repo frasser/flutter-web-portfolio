@@ -60,7 +60,7 @@ class _My_PortfoliosState extends State<My_Portfolios>
               ]),
           Expanded(
               child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 20, right: 8, left: 8),
             child: TabBarView(
               controller: _tabController,
               children: [

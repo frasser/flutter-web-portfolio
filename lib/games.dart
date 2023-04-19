@@ -11,76 +11,65 @@ class Games extends StatelessWidget {
         "images/viaje.jpeg",
         "3D",
         "ADVENTURE",
-        "An astral experience becomes dangerous when a boy gets caught up in the journey by taking 'Yagé'",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "An astral experience becomes dangerous when a boy gets caught up in the journey by taking 'Yagé'. I worked as a game designer, level designer, and programmer for some mechanics.",
+        "https://github.com/First-Jam-Generation-G1/Viaje-Astral-LFS.git",
+        "https://bayron-david.itch.io/viaje-astral",
+        "",
+        "",
+        ""),
     Game(
-        "HAKUNA MATATA",
+        "NO WAY BACK",
         "images/way.jpeg",
-        "2D",
-        "SURVIVE",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "3D",
+        "SIMULATION",
+        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. I worked as a game designer and level designer",
+        "https://github.com/frasser/g9-running-in-future",
+        "https://frasser.itch.io/no-way-back",
+        "",
+        "",
+        ""),
     Game(
-        "Way back",
+        "SENTINEL EXPEDITION",
         "images/sentinel.jpeg",
-        "3D",
-        "HORROR",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
-    Game(
-        "HIUNTING TALES",
-        "images/way.jpeg",
-        "3D",
-        "exploration",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
-    Game(
-        "HAKUNA",
-        "images/sentinel.jpeg",
-        "3D",
-        "HORROR",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
-    Game(
-        "HAKUNA MATATA",
-        "images/way.jpeg",
         "2D",
-        "SURVIVE",
-        "A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie. A mini game were you can simulate the hovercraft of marty mcfly form the back to the future movie",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/",
-        "https://frasser.itch.io/"),
+        "SURVIVAL",
+        "A trip to Sentinel Island becomes tedious when a couple of anthropologists discover an uncontacted indigenous civilization.  However, their lives will be put at risk when they discover something terrifying. ¡The tribe practices cannibalism!.I worked as a game designer and programmer for some mechanics an UI. ",
+        "https://github.com/kellyes93/generationJam2",
+        "https://kellyes93.itch.io/sentinel-expedition",
+        "",
+        "",
+        ""),
+    Game(
+        "HUNTING TALES",
+        "images/hunting.jpeg",
+        "3D",
+        "ADVENTURE",
+        "Join Ryo on this magical adventure, a monster hunter and sets out on a mission to free villages tormented by yokais. I worked as a game designer, level designer, and programmer for some mechanics.",
+        "https://github.com/Atlas-dev-sec/Hunting-Tales",
+        "https://kellyes93.itch.io/hunting-tales",
+        "",
+        "",
+        ""),
+    Game(
+        "ANOTHER TRIVIAL STORY",
+        "images/another.jpeg",
+        "VISUAL NOVEL",
+        "SUSPENSE",
+        "Strictly educational project that is focused on  create the story using and exploring AI generate images tools like Stable diffusion and ink for the narrative and dialogues. Based on some 'stranger things' scenes as tribute.",
+        "",
+        "https://frasser.itch.io/another-trivial-story",
+        "",
+        "",
+        ""),
   ];
 
   Widget _buildCardItem(BuildContext context, int index) {
     Game game = dataGames[index];
     double svgSize = 35;
     return Container(
-        margin: const EdgeInsets.only(top: 10),
-        width: 350,
-        height: 450,
+        margin: const EdgeInsets.only(top: 12),
+        width: 360,
+        height: 500,
         color: Colors.black12,
         child: Align(
           alignment: const Alignment(0.0, 0.0),
@@ -98,7 +87,7 @@ class Games extends StatelessWidget {
                     //margin: EdgeInsets.only(top: -10),
 
                     child: Align(
-                      alignment: const Alignment(-0.9, -1.5),
+                      alignment: const Alignment(-0.9, -1.4),
                       child: Text(
                         game.title,
                         textAlign: TextAlign.right,
@@ -143,11 +132,11 @@ class Games extends StatelessWidget {
                 child: Text(
                   game.description,
                   style: const TextStyle(
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.justify,
                 ),
               ),
               Padding(
@@ -155,76 +144,81 @@ class Games extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(game.git),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/git3.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                    if (game.git != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(game.git),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/git3.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(game.itch),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/it.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                              )),
+                    if (game.itch != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(game.itch),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/it.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(game.steam),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/steam.svg',
-                                  width: svgSize,
-                                  color: Colors.white,
+                              )),
+                    if (game.steam != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(game.steam),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/steam.svg',
+                                    width: svgSize,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(game.apple),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/appleStore.svg',
-                                  width: svgSize,
-                                  color: Colors.white,
+                              )),
+                    if (game.apple != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(game.apple),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/appleStore.svg',
+                                    width: svgSize,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            )),
-                    Link(
-                        target: LinkTarget.blank,
-                        uri: Uri.parse(game.play),
-                        builder: (context, followLink) => MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: followLink,
-                                child: SvgPicture.asset(
-                                  'images/play.svg',
-                                  width: svgSize,
-                                  //color: Colors.white,
+                              )),
+                    if (game.play != "")
+                      Link(
+                          target: LinkTarget.blank,
+                          uri: Uri.parse(game.play),
+                          builder: (context, followLink) => MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: followLink,
+                                  child: SvgPicture.asset(
+                                    'images/play.svg',
+                                    width: svgSize,
+                                    //color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ))
+                              ))
 
                     /*  Link(
                       target:
@@ -252,11 +246,11 @@ class Games extends StatelessWidget {
       children: [
         Expanded(
           child: ScrollSnapList(
-            margin: EdgeInsets.only(top: 40),
+            margin: EdgeInsets.only(top: 10),
             itemBuilder: _buildCardItem,
             dynamicItemSize: true,
             itemCount: dataGames.length,
-            itemSize: 350,
+            itemSize: 360,
             initialIndex: 2,
             reverse: true,
             onItemFocus: (index) {},

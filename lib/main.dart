@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 width: screenWidth,
-                height: isDesktop(context) ? 620 : 820,
+                height: isDesktop(context) ? 620 : 850,
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/back.jpeg"),
@@ -63,18 +63,18 @@ class MyApp extends StatelessWidget {
                     isDesktop(context)
                         ? My_custom_appBar()
                         : Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             margin: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 60),
+                                vertical: 20, horizontal: 0),
                             height: 25,
                             width: screenWidth,
                             decoration: const BoxDecoration(
                               color: Colors.transparent,
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text(
+                                /*Text(
                                   "frasser",
                                   style: Theme.of(context)
                                       .textTheme
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
                                       .copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white),
-                                ),
+                                ),*/
                                 IconButton(
                                   onPressed: () {},
                                   icon: const Icon(Icons.menu),
@@ -129,7 +129,7 @@ class MyApp extends StatelessWidget {
                                         height: 20,
                                       ),
                                       Text(
-                                        "I'm an Video games programmer and mobile apps developer. I enjoy developing experiences in mobile devices for android native and hybrid apps with flutter. Also, i have acquired eperience as game designer and developer doing personal and educative proyects in unity engine for web plataforms and casual mobile games.  "
+                                        "I'm an Video games programmer and mobile apps developer. I enjoy developing experiences in mobile devices for android native and hybrid apps with flutter. Also, i have acquired experience as game designer and developer doing personal and educative proyects in unity engine for web plataforms and casual mobile games.  "
                                         "\nI am passionate about technology with great creative skills and team leadership. Committed to self-taught learning and professional development.",
                                         overflow: TextOverflow.clip,
                                         softWrap: true,

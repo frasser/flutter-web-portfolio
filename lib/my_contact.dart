@@ -9,6 +9,9 @@ class My_contact extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
+    double svgSize = 35;
+    double svgMobileSize = 30;
+
     bool isDesktop(BuildContext context) =>
         MediaQuery.of(context).size.width >= 600;
 
@@ -20,7 +23,9 @@ class My_contact extends StatelessWidget {
           margin: EdgeInsets.only(top: 60),
           width: isDesktop(context) ? screenWidth * 0.5 : screenWidth * 0.8,
           //MediaQuery.of(context).size.width * 0.5,
-          padding: const EdgeInsets.all(30),
+          padding: isMobile(context)
+              ? const EdgeInsets.all(10)
+              : const EdgeInsets.all(30),
           decoration: BoxDecoration(
               color: Colors.black12,
               //border: Border.all(width: 2),
@@ -31,6 +36,7 @@ class My_contact extends StatelessWidget {
             children: [
               Text(
                 "¿ Do You Like What I Do ?",
+                textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
@@ -81,7 +87,9 @@ class My_contact extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/it.svg',
-                                    width: 35,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -101,7 +109,9 @@ class My_contact extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/linkedin.svg',
-                                    width: 35,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -120,7 +130,9 @@ class My_contact extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/twitter.svg',
-                                    width: 35,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -139,7 +151,9 @@ class My_contact extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/git.svg',
-                                    width: 35,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),

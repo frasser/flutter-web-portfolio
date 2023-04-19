@@ -51,10 +51,19 @@ class Apps extends StatelessWidget {
   Widget _buildCardItem(BuildContext context, int index) {
     App app = dataApps[index];
     double svgSize = 35;
+    double svgMobileSize = 30;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) =>
+        MediaQuery.of(context).size.width >= 600;
+
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
     return Container(
         margin: const EdgeInsets.only(top: 12),
-        width: 360,
-        height: 500,
+        width: isMobile(context) ? 250 : 360,
+        height: isMobile(context) ? 450 : 500,
         color: Colors.black12,
         child: Align(
           alignment: const Alignment(0.0, 0.0),
@@ -76,11 +85,17 @@ class Apps extends StatelessWidget {
                       child: Text(
                         app.title,
                         textAlign: TextAlign.right,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.amber,
-                        ),
+                        style: isMobile(context)
+                            ? const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.amber,
+                              )
+                            : const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.amber,
+                              ),
                       ),
                     ),
                   ),
@@ -90,11 +105,17 @@ class Apps extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   app.description,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+                  style: isMobile(context)
+                      ? const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        )
+                      : const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -114,7 +135,9 @@ class Apps extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/git3.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -129,7 +152,9 @@ class Apps extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/itch2.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -144,7 +169,9 @@ class Apps extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/appleStore.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -159,7 +186,9 @@ class Apps extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/play.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -186,6 +215,8 @@ class Apps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
     ScrollController _controller = ScrollController();
     return Column(
       children: [
@@ -195,7 +226,7 @@ class Apps extends StatelessWidget {
             itemBuilder: _buildCardItem,
             dynamicItemSize: true,
             itemCount: dataApps.length,
-            itemSize: 360,
+            itemSize: isMobile(context) ? 250 : 360,
             initialIndex: 2,
             reverse: true,
             onItemFocus: (index) {},

@@ -27,6 +27,13 @@ class _My_PortfoliosState extends State<My_Portfolios>
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) =>
+        MediaQuery.of(context).size.width >= 600;
+
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
@@ -38,10 +45,15 @@ class _My_PortfoliosState extends State<My_Portfolios>
         direction: Axis.vertical,
         children: [
           TabBar(
-              labelStyle: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              labelStyle: isMobile(context)
+                  ? const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    )
+                  : const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
               controller: _tabController,
               isScrollable: true,
               unselectedLabelColor: Colors.white,

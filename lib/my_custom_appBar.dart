@@ -16,15 +16,15 @@ class My_custom_appBar extends StatelessWidget {
         //borderRadius: BorderRadius.circular(40)
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
+          /*Text(
             'frasser',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
                 .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-          ),
+          ),*/
           Row(
             children: [
               TextButton(
@@ -32,7 +32,7 @@ class My_custom_appBar extends StatelessWidget {
                 child: const Text(
                   'ABOUT',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.amber,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
@@ -42,7 +42,7 @@ class My_custom_appBar extends StatelessWidget {
                   child: const Text(
                     'WORKS',
                     style: TextStyle(
-                        color: Colors.yellow,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   )),

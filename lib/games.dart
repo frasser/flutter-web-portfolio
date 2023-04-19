@@ -66,10 +66,19 @@ class Games extends StatelessWidget {
   Widget _buildCardItem(BuildContext context, int index) {
     Game game = dataGames[index];
     double svgSize = 35;
+    double svgMobileSize = 30;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    bool isDesktop(BuildContext context) =>
+        MediaQuery.of(context).size.width >= 600;
+
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
     return Container(
         margin: const EdgeInsets.only(top: 12),
-        width: 360,
-        height: 500,
+        width: isMobile(context) ? 250 : 360,
+        height: isMobile(context) ? 450 : 500,
         color: Colors.black12,
         child: Align(
           alignment: const Alignment(0.0, 0.0),
@@ -88,15 +97,19 @@ class Games extends StatelessWidget {
 
                     child: Align(
                       alignment: const Alignment(-0.9, -1.4),
-                      child: Text(
-                        game.title,
-                        textAlign: TextAlign.right,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.amber,
-                        ),
-                      ),
+                      child: Text(game.title,
+                          textAlign: TextAlign.right,
+                          style: isMobile(context)
+                              ? const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.amber,
+                                )
+                              : const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.amber,
+                                )),
                     ),
                   ),
                 ],
@@ -109,20 +122,28 @@ class Games extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(1.0),
                       child: Chip(
-                        backgroundColor: Colors.green,
-                        label: Text(game.type),
-                        labelStyle: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w800),
-                      ),
+                          backgroundColor: Colors.green,
+                          label: Text(game.type),
+                          labelStyle: isMobile(context)
+                              ? const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600)
+                              : const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800)),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Chip(
-                        backgroundColor: Colors.green,
-                        label: Text(game.type2),
-                        labelStyle: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w800),
-                      ),
+                          backgroundColor: Colors.green,
+                          label: Text(game.type2),
+                          labelStyle: isMobile(context)
+                              ? const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600)
+                              : const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w800)),
                     ),
                   ],
                 ),
@@ -131,11 +152,17 @@ class Games extends StatelessWidget {
                 padding: const EdgeInsets.all(2.0),
                 child: Text(
                   game.description,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+                  style: isMobile(context)
+                      ? const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        )
+                      : const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -154,7 +181,9 @@ class Games extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/git3.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -169,7 +198,9 @@ class Games extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/it.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -184,7 +215,9 @@ class Games extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/steam.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -199,7 +232,9 @@ class Games extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/appleStore.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -214,7 +249,9 @@ class Games extends StatelessWidget {
                                   onTap: followLink,
                                   child: SvgPicture.asset(
                                     'images/play.svg',
-                                    width: svgSize,
+                                    width: isMobile(context)
+                                        ? svgMobileSize
+                                        : svgSize,
                                     //color: Colors.white,
                                   ),
                                 ),
@@ -241,6 +278,8 @@ class Games extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile(BuildContext context) =>
+        MediaQuery.of(context).size.width < 600;
     ScrollController _controller = ScrollController();
     return Column(
       children: [
@@ -250,7 +289,7 @@ class Games extends StatelessWidget {
             itemBuilder: _buildCardItem,
             dynamicItemSize: true,
             itemCount: dataGames.length,
-            itemSize: 360,
+            itemSize: isMobile(context) ? 250 : 360,
             initialIndex: 2,
             reverse: true,
             onItemFocus: (index) {},

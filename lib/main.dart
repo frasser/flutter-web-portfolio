@@ -6,12 +6,19 @@ import 'package:my_portfolio/my_footer.dart';
 import 'package:my_portfolio/my_portfolios.dart';
 import 'package:my_portfolio/my_skills.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_strategy/url_strategy.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:flutter_svg/avd.dart';
 
-void main() => runApp(MaterialApp(
-      home: MyApp(),
-      scrollBehavior: MyCustomScroll(),
-    ));
+void main() {
+  setPathUrlStrategy();
+  runApp(ProviderScope(
+      child: MaterialApp(
+    title: "PORTFOLIO",
+    home: MyApp(),
+    scrollBehavior: MyCustomScroll(),
+  )));
+}
 
 class MyApp extends StatelessWidget {
   final TextStyle _bodyTextStyle =
@@ -60,21 +67,22 @@ class MyApp extends StatelessWidget {
                         fit: BoxFit.cover)),
                 child: Column(
                   children: [
-                    isDesktop(context)
-                        ? My_custom_appBar()
-                        : Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 0),
-                            height: 25,
-                            width: screenWidth,
-                            decoration: const BoxDecoration(
-                              color: Colors.transparent,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                /*Text(
+                    //isDesktop(context)
+                    // ?  //My_custom_appBar()
+                    //:
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 0),
+                      height: 25,
+                      width: screenWidth,
+                      decoration: const BoxDecoration(
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          /*Text(
                                   "frasser",
                                   style: Theme.of(context)
                                       .textTheme
@@ -83,14 +91,14 @@ class MyApp extends StatelessWidget {
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white),
                                 ),*/
-                                IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.menu),
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
-                          ),
+                          /* IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.menu),
+                            color: Colors.white,
+                          )*/
+                        ],
+                      ),
+                    ),
                     const SizedBox(
                       height: 10,
                     ),

@@ -10,7 +10,7 @@ class My_contact extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     double svgSize = 35;
-    double svgMobileSize = 30;
+    double svgMobileSize = 25;
 
     bool isDesktop(BuildContext context) =>
         MediaQuery.of(context).size.width >= 600;
@@ -98,7 +98,7 @@ class My_contact extends StatelessWidget {
                     Padding(
                       padding: isDesktop(context)
                           ? const EdgeInsets.symmetric(horizontal: 10)
-                          : const EdgeInsets.symmetric(horizontal: 0),
+                          : const EdgeInsets.symmetric(horizontal: 4),
                       child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse(
@@ -120,7 +120,7 @@ class My_contact extends StatelessWidget {
                     Padding(
                       padding: isDesktop(context)
                           ? const EdgeInsets.symmetric(horizontal: 10)
-                          : const EdgeInsets.symmetric(horizontal: 0),
+                          : const EdgeInsets.symmetric(horizontal: 4),
                       child: Link(
                           target: LinkTarget.blank,
                           uri: Uri.parse("https://twitter.com/jpfrazzer"),

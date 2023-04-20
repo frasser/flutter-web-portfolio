@@ -113,7 +113,7 @@ class Apps extends StatelessWidget {
                         )
                       : const TextStyle(
                           fontSize: 14,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w400,
                           color: Colors.white,
                         ),
                   textAlign: TextAlign.justify,
